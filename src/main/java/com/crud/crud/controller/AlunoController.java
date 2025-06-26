@@ -21,19 +21,14 @@ public class AlunoController {
         this.alunoService = alunoService;
     }
 
-    @PostMapping("/save")
+    @PostMapping("/aluno/save")
     public Aluno save(@RequestBody Aluno a) {
         Aluno novo_aluno = alunoService.save(a);
         return novo_aluno;
     }
 
-    @GetMapping("/findAll")
+    @GetMapping("/aluno/findAll")
     public List<Aluno> findAll() {
         return (List<Aluno>) alunoService.findAll();
-    }
-
-    @GetMapping("/teste")
-    public String teste() {
-        return "Servidor funcionando";
     }
 }
