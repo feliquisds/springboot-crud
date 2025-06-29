@@ -23,6 +23,10 @@ public class TurmaService {
         return turmaRepository.findAll();
     }
 
+    public Optional<Turma> findById(long id) {
+        return turmaRepository.findById(id);
+    }
+
     public void deleteById(long id) {
         turmaRepository.deleteById(id);
     }

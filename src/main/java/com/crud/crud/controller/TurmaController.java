@@ -1,5 +1,5 @@
 package com.crud.crud.controller;
-
+import java.util.Optional;
 import com.crud.crud.model.Turma;
 import com.crud.crud.service.TurmaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/turma")
 public class TurmaController {
-    // ... injeção de TurmaService
+    
 
     @Autowired
     private final TurmaService turmaService;
@@ -35,6 +35,11 @@ public class TurmaController {
     @GetMapping("/findAll")
     public List<Turma> findAll() {
         return (List<Turma>) turmaService.findAll();
+    }
+
+    @GetMapping("/find/{id}")
+    public Optional<Turma> findById(@PathVariable long id) {
+        return turmaService.findById(id);
     }
 
     @DeleteMapping("/delete/{id}")
