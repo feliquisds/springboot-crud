@@ -31,6 +31,13 @@ public class AlunoController {
         Aluno novo_aluno = alunoService.save(a);
         return novo_aluno;
     }
+    
+    @PostMapping("/update/{id}")
+    public Aluno update(@PathVariable long id, @RequestBody Aluno a) {
+        a.setID(id);
+        Aluno novo_aluno = alunoService.save(a);
+        return novo_aluno;
+    }
 
     @GetMapping("/findAll")
     public List<Aluno> findAll() {
