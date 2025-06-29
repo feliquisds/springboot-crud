@@ -1,5 +1,7 @@
 package com.crud.crud.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,6 +36,11 @@ public class ProfessorController {
     @GetMapping("/findAll")
     public Iterable<Professor> findAll() {
         return professorService.findAll();
+    }
+
+    @GetMapping("/find/{id}")
+    public Optional<Professor> findById(@PathVariable long id) {
+        return professorService.findById(id);
     }
 
     @DeleteMapping("/delete/{id}")
