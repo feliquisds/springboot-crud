@@ -5,7 +5,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.crud.crud.model.Aluno;
 import com.crud.crud.model.Professor;
 import com.crud.crud.service.ProfessorService;
 
