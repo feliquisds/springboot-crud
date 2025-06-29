@@ -1,6 +1,7 @@
 package com.crud.crud.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -34,6 +35,11 @@ public class AlunoController {
     @GetMapping("/findAll")
     public List<Aluno> findAll() {
         return (List<Aluno>) alunoService.findAll();
+    }
+
+    @GetMapping("/find/{id}")
+    public Optional<Aluno> findById(@PathVariable long id) {
+        return alunoService.findById(id);
     }
 
     @DeleteMapping("/delete/{id}")
