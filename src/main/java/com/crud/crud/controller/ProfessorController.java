@@ -3,6 +3,7 @@ package com.crud.crud.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.crud.crud.model.Aluno;
 import com.crud.crud.model.Professor;
 import com.crud.crud.service.ProfessorService;
 
@@ -21,6 +22,13 @@ public class ProfessorController {
     @PostMapping("/save")
     public Professor save(@RequestBody Professor professor) {
         return professorService.save(professor);
+    }
+
+     @PostMapping("/update/{id}")
+    public Professor update(@PathVariable long id, @RequestBody Professor a) {
+        a.setID(id);
+        Professor novo_professor = professorService.save(a);
+        return novo_professor;
     }
 
     @GetMapping("/findAll")
