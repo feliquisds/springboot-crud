@@ -25,6 +25,13 @@ public class TurmaController {
         return turmaService.save(turma);
     }
 
+    @PostMapping("/update/{id}")
+    public Turma update(@PathVariable long id, @RequestBody Turma a) {
+        a.setID(id);
+        Turma nova_turma = turmaService.save(a);
+        return nova_turma;
+    }
+
     @GetMapping("/findAll")
     public List<Turma> findAll() {
         return (List<Turma>) turmaService.findAll();

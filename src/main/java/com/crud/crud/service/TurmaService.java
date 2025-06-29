@@ -27,5 +27,5 @@ public class TurmaService {
         turmaRepository.deleteById(id);
     }
 
-    // Se quiser, adicione findById, update, etc.
+    
 }
