@@ -10,4 +10,6 @@ public class Turma {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long ID;
+    private String nome;
+    private String periodo;
 }
