@@ -22,4 +22,8 @@ public class AlunoService {
     public Iterable<Aluno> findAll() {
         return alunoRepository.findAll();
     }
+
+    public void deleteById(long id) {
+        alunoRepository.deleteById(id);
+    }
 }
