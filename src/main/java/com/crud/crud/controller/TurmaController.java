@@ -13,6 +13,13 @@ import java.util.List;
 public class TurmaController {
     // ... injeção de TurmaService
 
+    @Autowired
+    private final TurmaService turmaService;
+
+    public TurmaController(TurmaService turmaService) {
+        this.turmaService = turmaService;
+    }
+
     @PostMapping("/save")
     public Turma save(@RequestBody Turma turma) {
         return turmaService.save(turma);
