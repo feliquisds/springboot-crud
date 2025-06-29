@@ -2,6 +2,9 @@ package com.crud.crud.service;
 
 import com.crud.crud.model.Turma;
 import com.crud.crud.repository.TurmaRepository;
+
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
