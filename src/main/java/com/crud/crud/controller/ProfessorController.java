@@ -35,4 +35,9 @@ public class ProfessorController {
     public Iterable<Professor> findAll() {
         return professorService.findAll();
     }
+
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable long id) {
+        professorService.deleteById(id);
+    }
 }

@@ -23,4 +23,7 @@ public class ProfessorService {
     public Iterable<Professor> findAll() {
         return professorRepository.findAll();
     }
+      public void deleteById(long id) {
+        professorRepository.deleteById(id);
+    }
 }
