@@ -11,14 +11,19 @@ import com.crud.crud.service.ProfessorService;
 public class ProfessorController {
 
     @Autowired
-    private ProfessorService professorService;
+    private final ProfessorService professorService;
 
-    @PostMapping
+
+    public ProfessorController(ProfessorService professorService) {
+        this.professorService = professorService;
+    }
+
+    @PostMapping("/save")
     public Professor save(@RequestBody Professor professor) {
         return professorService.save(professor);
     }
 
-    @GetMapping
+    @GetMapping("/findAll")
     public Iterable<Professor> findAll() {
         return professorService.findAll();
     }
